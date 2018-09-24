@@ -14,6 +14,10 @@ const webservice = {
 		get: phrase => webserviceCore.get(`account/get/${phrase}`),
 	},
 
+
+	node: {
+		get: location => webserviceCore.get(`node/${location}`),
+	},
 };
 
 export default webservice;

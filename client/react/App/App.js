@@ -4,9 +4,10 @@ import {render} from "react-dom";
 import {connect, Provider} from "react-redux";
 import store from "./Store";
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import {withRouter} from "react-router";
+import {Redirect, withRouter} from "react-router";
 import webservice, {ajaxStatusCore} from "../Common/Webservice";
 import {dispatchFieldChanged} from "./Reducers";
+import NodeGroup from "../Component/NodeGroup";
 
 const propTypes = {
 	account: PropTypes.object,
@@ -46,13 +47,12 @@ class AppClass extends React.Component {
 				<div id="main-container">
 					{(ajaxStatusCore.isAjaxing() && (!this.props.characters.length || !this.props.bodies.length || !this.props.files.length)) ? <div>Loading...</div> :
 						<Switch>
-							<Route path="/character/edit/:guid" render={router => <EditCharacter guid={router.match.params.guid} {...this.props}/>}/>
-							<Route render={() => <div>redirect to starting node</div>}/>
+							<Route path="/node/:node" render={router => <NodeGroup node={router.match.params.node} {...this.props}/>}/>
+							<Route render={() => <Redirect to="/node/•"/>}/>
 						</Switch>
 					}
 				</div>
-				<div id="credit-footer">
-				</div>
+				<div id="credit-footer"></div>
 			</div>
 		);
 	}

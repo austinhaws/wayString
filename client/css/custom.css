@@ -1,0 +1,394 @@
+body {
+	background-color: black;
+}
+
+#app-container {
+	width: 1270px;
+	height: 883px;
+	margin: 0 auto;
+	background-color: #eeeeee;
+}
+
+#top-title-container {
+	height: 128px;
+	position: relative;
+}
+#top-title {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-family: "Arial black", Gadget, sans-serif;
+	font-size: 73px;
+	padding-top: 11px;
+}
+
+#right-account {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 13px;
+}
+
+#main-container {
+	background: url("../img/background.png") no-repeat;
+	background-size: contain;
+	height: 884px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.left-panel {
+	height: 785px;
+	width: 300px;
+	position: relative;
+	border-right: 3px solid #b6b6b6;
+	top: -1px;
+}
+
+input[type="text"] {
+	border: 3px solid #f4d10b;
+	background-color: transparent;
+	color: #f4d10b;
+	padding: 8px;
+	/* pull out padding of container */
+	width: calc(100% - 23px);
+}
+input[type="text"]::placeholder {
+	color: #f4d10b;
+}
+input[type="text"]:focus {
+	outline: none;
+}
+input[type="text"]:focus::placeholder {
+	color: #ad9408;
+}
+
+.input-search {
+	position: relative;
+}
+.input-search svg {
+	fill: #f4d10b;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	right: 10px;
+	top: 9px;
+}
+
+.left-panel .first-input {
+	margin-top: 19px;
+}
+
+.main-panel {
+	height: 785px;
+	width: 967px;
+	position: relative;
+	top: -1px;
+}
+
+#main-container .left-panel .opaque-background {
+	opacity: .75;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+}
+#main-container .left-panel .content {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	color: white;
+	width: 280px;
+	height: 763px;
+	padding: 10px;
+}
+
+#top-nav-container {
+	position: relative;
+	height: 96px;
+	width: 100%;
+	border-bottom: 3px solid #b6b6b6;
+}
+
+#top-opaque {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    opacity: .25;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#top-nav-container #page-title {
+	display: flex;
+	flex-direction: row;
+}
+.top-nav-back-arrow {
+	height: 37px;
+	width: 20px;
+	stroke-width: 1;
+	stroke-linejoin: round;
+	stroke-miterlimit: 4;
+	stroke: #f4d10b;
+	fill: transparent;
+	margin-right: 20px;
+	cursor: pointer;
+	position: relative;
+	top: -3px;
+}
+.top-nav-back-arrow:hover {
+	stroke-width: 2;
+}
+
+#page-title {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	color: #f4d10b;
+	font-size: 37px;
+	font-family: "Arial", Gadget, sans-serif;
+	line-height: 93px;
+	padding-left: 33px;
+	text-transform: uppercase;
+}
+
+#credit-footer a {
+	text-decoration: none;
+	color: #fefefe;
+}
+#credit-footer {
+	text-align: center;
+	color: #fefefe;
+	font-size: 8px;
+}
+
+.search-results {
+	margin-top: 8px;
+}
+.search-result {
+	display: flex;
+	flex-direction: row;
+	padding: 3px;
+}
+.search-result .name {
+	margin-left: 8px;
+	font-size: 20px;
+}
+.search-result .gender {
+	fill: #ffffff;
+	stroke-width:6;
+	stroke-linejoin:round;
+	stroke-miterlimit:4;
+	margin-top: 3px;
+}
+.search-result .gender.male svg {
+	height: 20px;
+	width: 20px;
+	margin-right: 5px;
+}
+.search-result .gender.female svg {
+	height: 22px;
+	width: 22px;
+	margin-left: 2px;
+}
+.search-result:hover svg, .search-result.selected svg {
+	fill: #f4d10b;
+}
+.search-result:hover, .search-result.selected {
+	color: #f4d10b;
+	cursor: pointer;
+}
+
+
+.body-container {
+	position: relative;
+}
+
+.main-panel .body-container {
+	margin: 100px auto 0;
+}
+.body-template {
+	margin: 0 auto;
+}
+.body-image {
+	position: absolute;
+}
+
+.bottom-buttons-container {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: calc(100% - 20px);
+	height: 40px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+}
+
+button {
+	height: 40px;
+	line-height: 25px;
+	font-size: 15px;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	background-color: transparent;
+	border: 3px solid #f4d10b;
+	outline: none;
+	text-decoration: none;
+	color: #f4d10b;
+}
+
+button:hover {
+	border-color: #ffe905;
+	color: #ffe905;
+}
+
+button.cancel-action {
+	border-color: #b3afa4;
+	color: #b3afa4;
+}
+
+button.cancel-action {
+	border-color: #d7d2c5;
+	color: #d7d2c5;
+}
+
+button[disabled], button[disabled]:hover {
+	border-color: #858072;
+	color: #858072;
+	cursor: default;
+}
+
+button.midget {
+	width: 40px;
+}
+
+.toggle-button {
+	position: relative;
+	cursor: pointer;
+}
+.toggle-button div {
+	stroke-width: 1;
+	stroke-linejoin: round;
+	stroke-miterlimit: 4;
+	stroke: white;
+	fill: transparent;
+	width: 25px;
+	height: 25px;
+}
+.toggle-button .toggle-check {
+	position: absolute;
+	top: -5px;
+	left: 7px;
+	stroke-width: 6px;
+	stroke: #2fd82f;
+}
+.image-row {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 13px;
+	cursor: pointer;
+}
+.image-row.multi-row {
+	flex-direction: column;
+}
+.toggle-button {
+	margin-right: 20px;
+}
+
+.items-list {
+
+}
+.item-row {
+	cursor: pointer;
+}
+.item-row.selected {
+	color: #f4d10b;
+}
+
+.images-list {
+	margin-top: 10px;
+	height: 700px;
+	overflow: auto;
+}
+
+.button-container {
+	position: relative;
+	width: 100px;
+	height: 40px;
+}
+.button-container button {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.button-container .opaque-background {
+	opacity: .5;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 40px;
+}
+.body-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-right: 13px;
+}
+.body-bottom.bottom-buttons-container {
+	bottom: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.print-paper {
+	height: 785px;
+	width: 607px;
+	margin: 0 auto;
+	background-color: white;
+	position: relative;
+}
+.print-paper .body-container {
+	margin-top: 0;
+}
+
+.body-name {
+	text-align: center;
+}
+
+.print-paper-size {
+	position: absolute;
+	top: 6px;
+	left: 12px;
+	font-weight: bold;
+	font-style: italic;
+	color: #676767;
+}
+
+
+.print-character {
+	height: 1000px;
+	width: 2000px;
+}
+
+.print-only {
+	display: none;
+}

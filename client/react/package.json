@@ -1,7 +1,7 @@
 {
-	"name": "crowe",
+	"name": "waystring",
 	"version": "1.0.0",
-	"description": "Crowe RPG Character Creator",
+	"description": "Way String RPG",
 	"main": "index.js",
 	"keywords": [
 		"RPG",

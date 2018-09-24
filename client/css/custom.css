@@ -22,32 +22,6 @@ body {
 	padding-top: 11px;
 }
 
-#right-account {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: 13px;
-}
-
-#main-container {
-	background: url("../img/background.png") no-repeat;
-	background-size: contain;
-	height: 884px;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	position: relative;
-}
-
-.left-panel {
-	height: 785px;
-	width: 300px;
-	position: relative;
-	border-right: 3px solid #b6b6b6;
-	top: -1px;
-}
-
 input[type="text"] {
 	border: 3px solid #f4d10b;
 	background-color: transparent;
@@ -357,38 +331,4 @@ button.midget {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-}
-
-.print-paper {
-	height: 785px;
-	width: 607px;
-	margin: 0 auto;
-	background-color: white;
-	position: relative;
-}
-.print-paper .body-container {
-	margin-top: 0;
-}
-
-.body-name {
-	text-align: center;
-}
-
-.print-paper-size {
-	position: absolute;
-	top: 6px;
-	left: 12px;
-	font-weight: bold;
-	font-style: italic;
-	color: #676767;
-}
-
-
-.print-character {
-	height: 1000px;
-	width: 2000px;
-}
-
-.print-only {
-	display: none;
 }

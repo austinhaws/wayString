@@ -27,19 +27,8 @@ CREATE TABLE accounts (
 )
 ;
 
-CREATE TABLE bodies (
-	id int not null AUTO_INCREMENT,
-	guid VARCHAR(50) not null,
-	data TEXT,
-	PRIMARY KEY (id),
-	UNIQUE(guid)
-)
-;
-
 -- //@UNDO
 -- SQL to undo the change goes here.
 
-DROP TABLE bodies
-;
 DROP TABLE accounts
 ;

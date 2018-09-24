@@ -44,8 +44,7 @@ $router->group(['prefix' => 'account'], function () use ($router) {
 	}
 
 	$router->get('new', function () {
-		$account = newAccount();
-		return webResponse(cleanRecord($account));
+		return webResponse(cleanRecord(newAccount()));
 	});
 
 	$router->get('get/{phrase}', function ($phrase) {

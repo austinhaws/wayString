@@ -11,6 +11,8 @@
 |
 */
 
+require_once('../cleanRecord.php');
+require_once('../constants.php');
 require_once('AccountRoutes.php');
 
 $router->get('/', function () use ($router) {

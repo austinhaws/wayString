@@ -47,7 +47,7 @@ class AppClass extends React.Component {
 					{(ajaxStatusCore.isAjaxing() && (!this.props.characters.length || !this.props.bodies.length || !this.props.files.length)) ? <div>Loading...</div> :
 						<Switch>
 							<Route path="/character/edit/:guid" render={router => <EditCharacter guid={router.match.params.guid} {...this.props}/>}/>
-							<Route render={<div>redirect to starting node</div>}/>
+							<Route render={() => <div>redirect to starting node</div>}/>
 						</Switch>
 					}
 				</div>

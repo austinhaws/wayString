@@ -392,3 +392,30 @@ button.midget {
 .print-only {
 	display: none;
 }
+
+
+/******* Node *******/
+#node-container {
+	width: 100%;
+}
+
+.node-detail {
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.node-detail button {
+	margin: 0 auto;
+}
+
+.node-group-row {
+	display: flex;
+	justify-content: space-around;
+}
+
+/******* END Node Detail *******/

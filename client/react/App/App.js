@@ -39,7 +39,7 @@ class AppClass extends React.Component {
 		return (
 			<div id="app-container">
 				<div id="top-title-container">
-					<div id="top-title">Way String</div>
+					<div id="top-title">Way War</div>
 				</div>
 				<div id="title-strip">
 					<div>
@@ -50,17 +50,19 @@ class AppClass extends React.Component {
 					</div>
 				</div>
 				<div id="main-container">
-					<div className="left-panel">
-						left side stuff here
-					</div>
-					<div className="main-panel">
-						{(ajaxStatusCore.isAjaxing() && !this.props.nodeGroup) ? <div>Loading...</div> : (
-							<Switch>
-								<Route path="/node/:node" render={router => <NodeGroup node={router.match.params.node} {...this.props}/>}/>
-								<Route render={() => <Redirect to="/node/•"/>}/>
-							</Switch>
-						)}
-					</div>
+					{(ajaxStatusCore.isAjaxing() && !this.props.nodeGroup) ? <div>Loading...</div> : (
+						<React.Fragment>
+							<div className="left-panel">
+								left side stuff here
+							</div>
+							<div className="main-panel">
+								<Switch>
+									<Route path="/node/:node" render={router => <NodeGroup node={router.match.params.node} {...this.props}/>}/>
+									<Route render={() => <Redirect to="/node/•"/>}/>
+								</Switch>
+							</div>
+						</React.Fragment>
+					)}
 				</div>
 				<div id="credit-footer"></div>
 			</div>

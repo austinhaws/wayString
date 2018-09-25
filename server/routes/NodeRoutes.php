@@ -27,6 +27,18 @@ $router->group(['prefix' => 'node'], function () use ($router) {
 		return DB::table('accounts')->where(FIELD_GUID, $guid)->first();
 	}
 
+	$router->post('claim', function (\Illuminate\Http\Request $request) {
+		$parentGuid = $request->get('parentGuid');
+		$nodeLR = $request->get('nodeLR');
+		$accountGuid = $request->get('accountGuid');
+
+		$parentNode = nodeDao()->selectByGuid($parentGuid);
+
+		nodeDao()->insertNode([
+
+		]);
+	});
+
 	$router->get('get/{location}', function ($guid) {
 		$result = [
 			'node' => null,

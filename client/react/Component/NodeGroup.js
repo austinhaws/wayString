@@ -40,21 +40,23 @@ export default class NodeGroup extends React.Component {
 		return this.props.nodeGroup.node ? (
 			<div id="node-container">
 				<div className="node-group-row">
-					<div className="left-choice"><NodeDetail node={this.props.nodeGroup.left}/></div>
-					<div className="right-choice"><NodeDetail node={this.props.nodeGroup.right}/></div>
+					<div className="left-choice"><NodeDetail node={this.props.nodeGroup.left} parentNode={this.props.nodeGroup.node} history={this.props.history} leftRight="L"/></div>
+					<div className="right-choice"><NodeDetail node={this.props.nodeGroup.right} parentNode={this.props.nodeGroup.node} history={this.props.history} leftRight="R"/></div>
 				</div>
 
 				<div className="node-group-row">
-					<div className="main-node"><NodeDetail node={this.props.nodeGroup.node}/></div>
+					<div className="main-node"><NodeDetail node={this.props.nodeGroup.node} parentNode={this.props.nodeGroup.parent} history={this.props.history}/></div>
 				</div>
 
 				{
 					this.props.nodeGroup.parent ?
-						(<div className="node-group-row">
-							{this.props.nodeGroup.node.location.substring(-1) === 'R' ? undefined : <div></div>}
-							<div className="parent-node"><NodeDetail node={this.props.nodeGroup.parent}/></div>
-							{this.props.nodeGroup.node.location.substring(-1) === 'L' ? undefined : <div></div>}
-						</div>) : undefined
+						(
+							<div className="node-group-row">
+								{this.props.nodeGroup.node.location.substring(-1) === 'R' ? undefined : <div className="node-detail"></div>}
+								<div className="parent-node"><NodeDetail node={this.props.nodeGroup.parent} history={this.props.history}/></div>
+								{this.props.nodeGroup.node.location.substring(-1) === 'L' ? undefined : <div className="node-detail"></div>}
+							</div>
+						) : undefined
 				}
 			</div>
 			) : null

@@ -27,7 +27,23 @@ $router->group(['prefix' => 'node'], function () use ($router) {
 		return DB::table('accounts')->where(FIELD_GUID, $guid)->first();
 	}
 
-	$router->get('get/{location}', function ($location) {
-		return webResponse(cleanRecord(nodeDao()->selectByLocation(urldecode($location))));
+	$router->get('get/{location}', function ($guid) {
+		$result = [
+			'node' => null,
+			'left' => null,
+			'right' => null,
+			'parent' => null,
+		];
+
+		$result['node'] = nodeDao()->selectByGuid(urldecode($guid));
+
+		if ($result['node']) {
+			$location = $result['node']->location;
+			$result['left'] = nodeDao()->selectByLocation($location . 'L');
+			$result['right'] = nodeDao()->selectByLocation($location . 'R');
+			$result['parent'] = strlen($location) > 1 ? nodeDao()->selectByLocation(substr($location, 0, -1)) : null;
+		}
+
+		return webResponse(cleanRecord($result));
 	});
 });

@@ -37,6 +37,7 @@ export default class NodeGroup extends React.Component {
 	}
 
 	render() {
+		const nodeDirection = this.props.nodeGroup.node && this.props.nodeGroup.node.location.substring(this.props.nodeGroup.node.location.length - 1);
 		return this.props.nodeGroup.node ? (
 			<div id="node-container">
 				<div className="node-group-row">
@@ -52,9 +53,9 @@ export default class NodeGroup extends React.Component {
 					this.props.nodeGroup.parent ?
 						(
 							<div className="node-group-row">
-								{this.props.nodeGroup.node.location.substring(-1) === 'R' ? undefined : <div className="node-detail"></div>}
+								{nodeDirection === 'R' ? undefined : <div className="node-detail placeholder"></div>}
 								<div className="parent-node"><NodeDetail node={this.props.nodeGroup.parent} history={this.props.history}/></div>
-								{this.props.nodeGroup.node.location.substring(-1) === 'L' ? undefined : <div className="node-detail"></div>}
+								{nodeDirection === 'L' ? undefined : <div className="node-detail placeholder"></div>}
 							</div>
 						) : undefined
 				}

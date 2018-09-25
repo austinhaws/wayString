@@ -401,12 +401,16 @@ button.midget {
 
 .node-detail {
 	width: 300px;
-	height: 300px;
+	height: 200px;
 	border: 1px solid black;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+}
+
+.node-detail.placeholder {
+	border: none;
 }
 
 .node-detail button {

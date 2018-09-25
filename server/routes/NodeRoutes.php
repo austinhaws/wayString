@@ -2,41 +2,23 @@
 
 require_once('WebResponse.php');
 require_once('dao/NodeDao.php');
+require_once('dao/AccountDao.php');
 
 $router->group(['prefix' => 'node'], function () use ($router) {
 
-	/**
-	 * create a new node with a new passphrase
-	 *
-	 * @return object the new account
-	 */
-	function newNode() {
-		do {
-			$adjective = selectRandomWord('adjective');
-			$noun = selectRandomWord('noun');
-			$number = mt_rand(10, 99);
-
-			$phrase = "$adjective$noun$number";
-
-			$account = DB::table('accounts')->where('phrase', '=', $phrase)->get();
-		} while (count($account));
-
-		$guid = uniqid();
-		DB::table('accounts')->insert(['guid' => $guid, 'phrase' => $phrase]);
-
-		return DB::table('accounts')->where(FIELD_GUID, $guid)->first();
-	}
-
 	$router->post('claim', function (\Illuminate\Http\Request $request) {
 		$parentGuid = $request->get('parentGuid');
-		$nodeLR = $request->get('nodeLR');
-		$accountGuid = $request->get('accountGuid');
-
 		$parentNode = nodeDao()->selectByGuid($parentGuid);
 
-		nodeDao()->insertNode([
+		$nodeLR = $request->get('nodeLR');
+		$accountGuid = $request->get('accountGuid');
+		$account = accountDao()->selectByGuid($accountGuid);
 
-		]);
+		return webResponse(cleanRecord(nodeDao()->insert([
+			'location' => $parentNode->location . $nodeLR,
+			'accounts_id' => $account->id,
+			'guid' => uniqid(),
+		])));
 	});
 
 	$router->get('get/{location}', function ($guid) {

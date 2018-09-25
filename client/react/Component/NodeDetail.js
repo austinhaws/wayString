@@ -23,7 +23,7 @@ export default class NodeDetail extends React.Component {
 			<div className="node-detail">
 				{
 					this.props.node ?
-						<NodeClaimed node={this.props.node}/> :
+						<NodeClaimed node={this.props.node} history={this.props.history}/> :
 						<NodeUnclaimed
 							node={this.props.node}
 							parentNode={this.props.parentNode}

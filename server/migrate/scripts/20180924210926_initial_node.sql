@@ -21,13 +21,13 @@ CREATE TABLE nodes (
 	id INT NOT NULL AUTO_INCREMENT,
 	location VARCHAR(500) NOT NULL,
 	guid VARCHAR(500) NOT NULL,
-	account_id INT,
+	accounts_id INT,
 	discovered_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id),
-	FOREIGN KEY (account_id) REFERENCES accounts (id)
+	FOREIGN KEY (accounts_id) REFERENCES accounts (id)
 );
 
-INSERT INTO nodes (location, account_id, guid) VALUES ('•', null, '•');
+INSERT INTO nodes (location, accounts_id, guid) VALUES ('•', null, '•');
 
 -- //@UNDO
 -- SQL to undo the change goes here.

@@ -23,7 +23,8 @@ export default class NodeUnclaimed extends React.Component {
 	}
 
 	claimNode() {
-		webservice.node.claim(this.props.parentNode.guid, this.props.leftRight).then(() => redirect.node.detail(this.props.history, this.props.node.guid));
+		webservice.node.claim(this.props.parentNode.guid, this.props.leftRight)
+			.then(node => redirect.node.detail(this.props.history, node.guid));
 	}
 
 	render() {

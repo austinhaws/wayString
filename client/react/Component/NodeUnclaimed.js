@@ -4,6 +4,7 @@ import {Button} from "dts-react-common";
 import webservice from "../Common/Webservice";
 import redirect from "../Common/Redirect";
 import ReactRouterPropTypes from 'react-router-prop-types';
+import {dispatchFieldChanged} from "../App/Reducers";
 
 const propTypes = {
 	history: ReactRouterPropTypes.history.isRequired,
@@ -24,7 +25,10 @@ export default class NodeUnclaimed extends React.Component {
 
 	claimNode() {
 		webservice.node.claim(this.props.parentNode.guid, this.props.leftRight)
-			.then(node => redirect.node.detail(this.props.history, node.guid));
+			.then(data => {
+				dispatchFieldChanged(undefined, 'account', data.account);
+				redirect.node.detail(this.props.history, data.node.guid);
+			});
 	}
 
 	render() {

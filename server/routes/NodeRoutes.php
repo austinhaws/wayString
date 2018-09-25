@@ -10,15 +10,22 @@ $router->group(['prefix' => 'node'], function () use ($router) {
 		$parentGuid = $request->get('parentGuid');
 		$parentNode = nodeDao()->selectByGuid($parentGuid);
 
-		$nodeLR = $request->get('nodeLR');
 		$accountGuid = $request->get('accountGuid');
 		$account = accountDao()->selectByGuid($accountGuid);
 
-		return webResponse(cleanRecord(nodeDao()->insert([
-			'location' => $parentNode->location . $nodeLR,
-			'accounts_id' => $account->id,
-			'guid' => uniqid(),
-		])));
+		$nodeLR = $request->get('nodeLR');
+
+		accountDao()->increaseCoins($account->id, 1);
+		$account->coins++;
+
+		return webResponse([
+			'node' => cleanRecord(nodeDao()->insert([
+				'location' => $parentNode->location . $nodeLR,
+				'accounts_id' => $account->id,
+				'guid' => uniqid(),
+			])),
+			'account' => cleanRecord($account),
+		]);
 	});
 
 	$router->get('get/{location}', function ($guid) {

@@ -40,6 +40,11 @@ class AppClass extends React.Component {
 			<div id="app-container">
 				<div id="top-title-container">
 					<div id="top-title">Way String</div>
+				</div>
+				<div id="title-strip">
+					<div>
+						Coins: {this.props.account ? this.props.account.coins : undefined}
+					</div>
 					<div id="right-account">
 						Your Id: {this.props.account ? this.props.account.phrase : 'Loading...'} <button>Login to Save</button>
 					</div>

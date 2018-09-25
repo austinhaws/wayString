@@ -22,10 +22,13 @@ body {
 	padding-top: 11px;
 }
 
-#right-account {
-	position: absolute;
-	bottom: 0;
-	right: 0;
+#title-strip {
+	position: relative;
+	top: -40px;
+	display: flex;
+	justify-content: space-between;
+}
+#title-strip > div {
 	padding: 13px;
 }
 

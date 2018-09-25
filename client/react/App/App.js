@@ -50,12 +50,17 @@ class AppClass extends React.Component {
 					</div>
 				</div>
 				<div id="main-container">
-					{(ajaxStatusCore.isAjaxing() && !this.props.nodeGroup) ? <div>Loading...</div> : (
-						<Switch>
-							<Route path="/node/:node" render={router => <NodeGroup node={router.match.params.node} {...this.props}/>}/>
-							<Route render={() => <Redirect to="/node/•"/>}/>
-						</Switch>
-					)}
+					<div className="left-panel">
+						left side stuff here
+					</div>
+					<div className="main-panel">
+						{(ajaxStatusCore.isAjaxing() && !this.props.nodeGroup) ? <div>Loading...</div> : (
+							<Switch>
+								<Route path="/node/:node" render={router => <NodeGroup node={router.match.params.node} {...this.props}/>}/>
+								<Route render={() => <Redirect to="/node/•"/>}/>
+							</Switch>
+						)}
+					</div>
 				</div>
 				<div id="credit-footer"></div>
 			</div>

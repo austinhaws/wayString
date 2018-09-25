@@ -44,7 +44,7 @@ body {
 }
 
 .left-panel {
-	height: 785px;
+	height: 690px;
 	width: 300px;
 	position: relative;
 	border-right: 3px solid #b6b6b6;
@@ -93,7 +93,7 @@ input[type="text"]:focus::placeholder {
 }
 
 .main-panel {
-	height: 785px;
+	height: 690px;
 	width: 967px;
 	position: relative;
 	top: -1px;
@@ -363,7 +363,7 @@ button.midget {
 }
 
 .print-paper {
-	height: 785px;
+	height: 690px;
 	width: 607px;
 	margin: 0 auto;
 	background-color: white;
@@ -400,6 +400,11 @@ button.midget {
 /******* Node *******/
 #node-container {
 	width: 100%;
+	height: calc(100% - 40px);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 20px;
 }
 
 .node-detail {

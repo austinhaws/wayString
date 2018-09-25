@@ -13,7 +13,9 @@
 
 require_once('../cleanRecord.php');
 require_once('../constants.php');
+
 require_once('AccountRoutes.php');
+require_once('NodeRoutes.php');
 
 $router->get('/', function () use ($router) {
     return $router->app->version();

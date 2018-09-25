@@ -6,9 +6,10 @@
 * @param object $record the record to be cleaned (by address so parameter is changed)
 * @return object the cleaned record (for chaining)
 */
-function cleanRecord(&$record)
+function cleanRecord($record)
 {
-	unset($record->id);
-	$record->data = json_decode($record->data);
+	if ($record) {
+		unset($record->id);
+	}
 	return $record;
 }

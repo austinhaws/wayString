@@ -16,7 +16,7 @@ const webservice = {
 
 
 	node: {
-		get: location => webserviceCore.get(`node/${location}`),
+		get: location => webserviceCore.get(`node/get/${location}`),
 	},
 };
 

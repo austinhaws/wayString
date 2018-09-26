@@ -7,7 +7,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import {Redirect, withRouter} from "react-router";
 import webservice, {ajaxStatusCore} from "../Common/Webservice";
 import {dispatchFieldChanged} from "./Reducers";
-import NodeGroup from "../Component/NodeGroup";
+import NodeGroup from "../Component/Node/NodeGroup";
+import AccountPanel from "../Component/Account/AccountPanel";
 
 const propTypes = {
 	account: PropTypes.object,
@@ -53,7 +54,7 @@ class AppClass extends React.Component {
 					{(ajaxStatusCore.isAjaxing() && !this.props.nodeGroup) ? <div>Loading...</div> : (
 						<React.Fragment>
 							<div className="left-panel">
-								left side stuff here
+								<AccountPanel {...this.props}/>
 							</div>
 							<div className="main-panel">
 								<Switch>

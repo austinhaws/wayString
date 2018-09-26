@@ -34,6 +34,15 @@ class NodeDao
 	{
 		return $this->selectById(DB::table('nodes')->insertGetId($node));
 	}
+
+	public function selectByAccountId($id)
+	{
+		return DB::table('nodes')
+			->where('accounts_id', '=', $id)
+			->orWhere('guid', '=', '•')
+			->orderBy(DB::raw('LENGTH(location)'), 'ASC')
+			->get();
+	}
 }
 
 function nodeDao()

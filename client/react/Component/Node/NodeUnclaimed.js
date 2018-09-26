@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 import {Button} from "dts-react-common";
-import webservice from "../Common/Webservice";
-import redirect from "../Common/Redirect";
+import webservice from "../../Common/Webservice";
+import redirect from "../../Common/Redirect";
 import ReactRouterPropTypes from 'react-router-prop-types';
-import {dispatchFieldChanged} from "../App/Reducers";
+import {dispatchFieldChanged} from "../../App/Reducers";
 
 const propTypes = {
 	history: ReactRouterPropTypes.history.isRequired,

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import {Button} from "dts-react-common";
 import ReactRouterPropTypes from 'react-router-prop-types';
-import redirect from '../Common/Redirect';
+import redirect from '../../Common/Redirect';
 
 const propTypes = {
 	node: PropTypes.object.isRequired,

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
-import webservice from "../Common/Webservice";
+import webservice from "../../Common/Webservice";
 import ReactRouterPropTypes from 'react-router-prop-types';
-import {dispatchFieldChanged} from "../App/Reducers";
+import {dispatchFieldChanged} from "../../App/Reducers";
 import NodeDetail from "./NodeDetail";
 
 const propTypes = {

@@ -15,6 +15,7 @@ function cleanRecord($record)
 			}
 		} else {
 			unset($record->id);
+			unset($record->accounts_id);
 		}
 	}
 	return $record;

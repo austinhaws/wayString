@@ -12,6 +12,7 @@ $router->group(['prefix' => 'node'], function () use ($router) {
 
 		$accountGuid = $request->get('accountGuid');
 		$account = accountDao()->selectByGuid($accountGuid);
+		$account->nodes = nodeDao()->selectByAccountId($account->id);
 
 		$nodeLR = $request->get('nodeLR');
 

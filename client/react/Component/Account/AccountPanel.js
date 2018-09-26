@@ -34,7 +34,7 @@ export default class AccountPanel extends React.Component {
 					Nodes:
 					{
 						_.castArray(this.props.account.nodes).map(node => (
-							<div className="account-panel-node">
+							<div className="account-panel-node" key={node.location}>
 								{node.location} Undeveloped <Button label="Visit" onClick={() => this.visitNode(node)}/>
 							</div>
 						))
